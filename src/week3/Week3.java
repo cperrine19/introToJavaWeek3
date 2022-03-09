@@ -8,7 +8,7 @@ public class Week3 {
 	public static void main(String[] args) {
 		// Q1. Create an array of int called ages that contains the following values: 3,
 		// 9, 23, 64, 2, 8, 28, 93.
-		int[] ages = new int[9];
+		int[] ages = new int[8];
 		ages[0] = 3;
 		ages[1] = 9;
 		ages[2] = 23;
@@ -17,16 +17,16 @@ public class Week3 {
 		ages[5] = 8;
 		ages[6] = 28;
 		ages[7] = 93;
-		ages[8] = 1;
 //		// Q1a. Programmatically subtract the value of the first element in the array
 //		// from the value in the last element of the array (i.e. do not use ages[7] in
 //		// your
 //		// code). Print the result to the console.
-		int sub = ages[7] - ages[0];
+		int sub = ages[ages.length-1] - ages[0];
 		System.out.println(sub);
 //		// Q1b.Add a new age to your array and repeat the step above to ensure it is
 //		// dynamic (works for arrays of different lengths).
-		int sub2 = ages[8] - ages[0];
+		int[] ages2 = {3, 9, 23, 64, 2, 8, 28, 93, 1};
+		int sub2 = ages2[ages2.length-1] - ages2[0];
 		System.out.println(sub2);
 //		// Q1c.Use a loop to iterate through the array and calculate the average age.
 //		// Print the result to the console.
@@ -58,7 +58,11 @@ public class Week3 {
 		int[] nameLengths = new int[names.length];
 		for (int i = 0; i < names.length; i++) {
 			nameLengths[i] = names[i].length();
-		}
+		} 
+//		int index = 0;
+//		for (String name : names) {
+//			nameLengths[index++] = name.length();
+		//}
 		System.out.println(Arrays.toString(nameLengths));
 //		// Q6. Write a loop to iterate over the nameLengths array and calculate the sum
 //		// of all the elements in the array. Print the result to the console.
@@ -71,6 +75,7 @@ public class Week3 {
 		System.out.println("Enter a number 1-9");
 		int n = in.nextInt();
 		System.out.println(multiplyString(word, n));
+		in.close();
 		// Q8. Write a method that takes two Strings, firstName and lastName, and
 //				// returns a full name
 		Scanner in1 = new Scanner(System.in);
@@ -175,8 +180,7 @@ public class Week3 {
 	// Q6.
 	private static int sumNameData(int[] nameLengths) {
 		int sum = 0;
-		int i;
-		for (i = 0; i < nameLengths.length; i++)
+		for (int i = 0; i < nameLengths.length; i++)
 			sum += nameLengths[i];
 		return sum;
 	}
@@ -192,8 +196,7 @@ public class Week3 {
 
 	// Q8.
 	private static String fullName(String firstName, String lastName) {
-		String result = firstName + " " + lastName;
-		return result;
+		 return firstName + " " + lastName;
 	}
 
 	// Q9.
